@@ -1,6 +1,6 @@
 {
   "name": "noisify-canvas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Animate a canvas with noise.",
   "main": "lib/noisifyCanvas.js",
   "scripts": {
