@@ -1,0 +1,20 @@
+{
+  "name": "noisify-canvas",
+  "version": "1.0.0",
+  "description": "Animate a canvas with noise.",
+  "main": "lib/noisifyCanvas.js",
+  "scripts": {
+    "lint": "eslint src/**",
+    "build-demo": "browserify -t babelify -d src/demo/demo.js -o demo/demo.js",
+    "build": "babel -d lib/ --ignore src/demo/* src/"
+  },
+  "author": "K. P. MacGregor <phoenixstormcrow@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "is-little-endian": "0.0.0"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.4"
+  }
+}
