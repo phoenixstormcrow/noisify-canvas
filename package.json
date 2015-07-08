@@ -16,5 +16,13 @@
   "devDependencies": {
     "babelify": "^6.1.2",
     "browserify": "^10.2.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phoenixstormcrow/noisify-canvas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/phoenixstormcrow/noisify-canvas/issues"
+  },
+  "homepage": "https://github.com/phoenixstormcrow/noisify-canvas"
 }
