@@ -36,7 +36,7 @@ var noisify = require('noisify-canvas'),
 noisy.start();
 ```
 
-See the [demo](demo/index.html) for another example.
+See the [demo](http://phoenixstormcrow.github.io/noisify-canvas/) for another example.
 
 ## about the code
 
