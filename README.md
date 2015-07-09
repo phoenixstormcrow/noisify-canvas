@@ -22,6 +22,14 @@ import noisify from './node_modules/noisify-canvas';
 
 This module exports a function which takes an html canvas as a parameter, and returns an object with three fields: `canvas`, the canvas it was passed, `start`, a function which starts the animation, and `stop`, a function which stops the animation.
 
+The function accepts an optional parameter, which should be an object specifying the `mode`:
+
+```
+noisify(canvas, {mode: 'rgb'|'grey'});
+```
+
+The default mode is `grey`, which generates greyscale noise. Setting it to `rgb` will generate color noise. In both cases, all pixels will be fully opaque, that is, the alpha channel is always set to `0xff`.
+
 ### example
 ```
 <!-- example html-->

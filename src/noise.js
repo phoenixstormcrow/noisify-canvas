@@ -2,15 +2,19 @@
 
 'use strict';
 
+function rand () {
+  return Math.random() * 0xff & 0xff;
+}
+
 let pixel = require('is-little-endian') ?
-      function le (val) {
-        return (0xff << 24) | (val << 16) | (val << 8) | val;
+      function le (r, g, b) {
+        return (0xff << 24) | (b << 16) | (g << 8) | r;
       } :
-      function be (val) {
-        return (val << 24) | (val << 16) | (val << 8) | 0xff;
+      function be (r, g, b) {
+        return (r << 24) | (g << 16) | (b << 8) | 0xff;
       };
 
-function generate (ctx) {
+function generate (ctx, {mode = 'grey'} = {}) {
   let w = ctx.canvas.width, h = ctx.canvas.height,
     imgData = ctx.createImageData(w, h),
     buf = new ArrayBuffer(imgData.data.length),
@@ -18,8 +22,13 @@ function generate (ctx) {
     data = new Uint32Array(buf);
 
   for (let i = 0, l = data.length; i < l; ++i) {
-    let rand = Math.random() * 0xff & 0xff;
-    data[i] = pixel(rand);
+    let r, g, b;
+    if (mode === 'rgb') {
+      [r, g, b] = [rand(), rand(), rand()];
+    } else {
+      r = g = b = rand();
+    }
+    data[i] = pixel(r, g, b);
   }
 
   imgData.data.set(pix);
