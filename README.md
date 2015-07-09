@@ -28,7 +28,7 @@ The function accepts an optional parameter, which should be an object specifying
 noisify(canvas, {mode: 'rgb'|'grey'});
 ```
 
-The default mode is `grey`, which generates greyscale noise. Setting it to `rgb` will generate color noise. In both cases, all pixels will be fully opaque, that is, the alpha channel is always set to `0xff`.
+The default mode is `'grey'`, which generates greyscale noise. Setting it to `'rgb'` will generate color noise. In both cases, all pixels will be fully opaque, that is, the alpha channel is always set to `0xff`.
 
 ### example
 ```
