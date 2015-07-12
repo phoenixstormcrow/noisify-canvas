@@ -48,7 +48,7 @@ See the [demo](http://phoenixstormcrow.github.io/noisify-canvas/) for another ex
 
 ## about the code
 
-Untranspiled es6 code is in the `src` directory, and is transpiled using babel into the `lib` directory.
+Untranspiled es6 code is in the `src` directory, and is transpiled using the babelify transform into the `build` directory.
 The included `.eslintrc` is copied, probably verbatim, from Eric Elliott's [gist](https://gist.github.com/ericelliott/ce988c1a808ad903a528).
 
 ## license

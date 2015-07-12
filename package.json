@@ -2,11 +2,11 @@
   "name": "noisify-canvas",
   "version": "1.1.0",
   "description": "Animate a canvas with noise.",
-  "main": "lib/noisifyCanvas.js",
+  "main": "build/noisifyCanvas.js",
   "scripts": {
     "lint": "eslint src/**",
     "build-demo": "browserify -t babelify -d src/demo/demo.js -o demo/demo.js",
-    "build": "babel -d lib/ --ignore src/demo/* src/"
+    "build": "babel src/noisifyCanvas.js -o build/noisifyCanvas.js"
   },
   "author": "K. P. MacGregor <phoenixstormcrow@gmail.com>",
   "license": "MIT",

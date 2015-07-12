@@ -2,7 +2,7 @@
 
 'use strict';
 
-import noisify from '../../';
+import noisify from '../noisifyCanvas';
 
 [].slice.call(document.querySelectorAll('.noise-canvas'))
   .forEach(function (canvas) {

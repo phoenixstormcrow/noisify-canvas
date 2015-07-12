@@ -1,10 +1,11 @@
-/* noise.js */
+/* noisifyCanvas.js */
 
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+exports['default'] = noisify;
 function rand() {
   return Math.random() * 0xff & 0xff;
 }
@@ -46,5 +47,25 @@ function generate(ctx) {
   return imgData;
 }
 
-exports['default'] = generate;
+function noisify(canvas, opts) {
+  var reqId = undefined;
+
+  function step(ctx) {
+    ctx.putImageData(generate(ctx, opts), 0, 0);
+    reqId = window.requestAnimationFrame(function () {
+      return step(ctx);
+    });
+  }
+
+  return {
+    canvas: canvas,
+    start: function start() {
+      step(canvas.getContext('2d'));
+    },
+    stop: function stop() {
+      window.cancelAnimationFrame(reqId);
+    }
+  };
+}
+
 module.exports = exports['default'];
